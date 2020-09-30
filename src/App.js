@@ -6,29 +6,15 @@ import ToDoList from './components/TodoList';
 // design `App` to be the parent component of your application.
 // this component is going to take care of state, and any change handlers you need to work with your state.
 import "./App.css";
-const task = [
-  {
-    id: 123,
-    task: "Code New App",
-    completed: false
-  },
-  {
-    id: 456,
-    task: "Get Oil Change For Car",
-    completed: false
-  },
-  {
-    id: 789,
-    task: "Go grocery shopping",
-    completed: false
-  },
-];
+
+const task = [];
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      task
+      task,
+      visible: false
     };
   }
 

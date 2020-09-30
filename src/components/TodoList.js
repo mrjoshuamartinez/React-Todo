@@ -6,13 +6,17 @@ import ToDo from "./Todo";
 const ToDoList = (props) => {
 
   return (
-    <div className="task-list">
-      {props.task.map((task) => (
-        <ToDo key={task.id} task={task} toggleTask={props.toggleTask} />
-      ))}
-      <button className="clear-btn" onClick={props.clearCompleted}>
-        Clear Completed
-      </button>
+    <div>
+      <div className="task-list">
+        {props.task.map((task) => (
+          <ToDo key={task.id} task={task} toggleTask={props.toggleTask} />
+        ))}
+      </div>
+      <div className="clear-btn-wrap">
+        <button className="clear-btn" onClick={props.clearCompleted}>
+          Clear Completed
+        </button>
+      </div>
     </div>
   );
 };
