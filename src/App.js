@@ -14,10 +14,16 @@ class App extends Component {
     super();
     this.state = {
       task,
-      visible: false
+      isDialogVisible: false
     };
   }
 
+  showDialog(isShow){
+    this.setState({isDialogVisible: isShow});
+  }
+  sendInput(inputText){
+    console.log("sendInput (DialogInput#1): "+inputText);
+  }
   toggleTask = (taskId) => {
     this.setState({
       task: this.state.task.map((task) => {
@@ -56,7 +62,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="header">
-          <h1>To Do List</h1>
+          <h2>To Do List</h2>
           <ListForm addTask={this.addTask} />
         </div>
         <ToDoList
